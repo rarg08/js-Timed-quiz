@@ -69,6 +69,7 @@ if(time <= 0 || currentQuestion === questions.length){ //we check the timer for 
 } else {
     getQuestion(); //we go to the next question
 };
+//this part comes from the mdn of set timeout https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
 feedbackEl.setAttribute('class', 'feedback');
 setTimeout(function () {
   feedbackEl.setAttribute('class', 'feedback hide');

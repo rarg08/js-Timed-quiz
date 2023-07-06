@@ -1,7 +1,7 @@
 // we define a function to get the scores from the local storage and display them in the high score page
 function displayHighScore () {
 var highscores = JSON.parse(window.localStorage.getItem('highscores')) || []; // we define a variable and parse the local storage to get the values or get an empty array
-highscores.sort(function (a, b) { // we use the sort function to sort an array with the score
+highscores.sort(function (a, b) { // we use the sort function to sort an array with the score function from chatGPT
     return b.score - a.score;
 });
 
