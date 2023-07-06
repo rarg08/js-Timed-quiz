@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Coding Quiz</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+
+  <body>
+<!-- the 2 html method (we revised the solution given and we commented that it was the best approach) is used when you dont want to code so many hides on the html taken from https://www.wisdomjobs.com/e-university/html-4-tutorial-182/using-the-same-script-on-multiple-pages-2853.html#:~:text=You%20can%20store%20one%20or,them%20from%20multiple%20HTML%20pages.&text=Put%20the%20script%20in%20an,it%20into%20a%20separate%20file. -->
+    <div class="scores"><a href="highscores.html">View Highscores</a></div>
+<!-- we define the timer on the div so we can have a display of the time left, also we set the text to 0 so it starts there and we can prevent some negative time bugs  -->
+    <div class="timer">Time: <span id="time">0</span></div>
+
+    <div class="Card">
+        <!-- part of the code to display the quiz card to start the quiz, we define tilte an paragraph, then we define a button for the start so we can use event listeners -->
+      <div id="start-screen" class="start">
+        <h1>Coding Quiz</h1>
+        <p>
+          Try to answer the following code-related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by 5 seconds!
+        </p>
+        <button id="start">Start Quiz</button>
+      </div>
+<!-- in this div we define the parent for the question cards, all containt a title and 3 options -->
+      <div id="questions" class="hide"> 
+        <h2 id="question-title"></h2>
+        <div id="choices" class="choices"></div>
+      </div>
+<!-- in this div we define the end/feedback card that displays the score and the input for the initials and the submit button after the button is pressed to save initials the card should change to display the highscores html page-->
+      <div id="end-screen" class="hide">
+        <h2>Finished</h2>
+        <p>Your final score is <span id="final-score"></span>.</p>
+        <p>
+          Enter your initials: <input type="text" id="initials"/>
+          <button id="submit">Submit</button>
+        </p>
+      </div>
+
+      <div id="feedback" class="feedback hide"></div>
+    </div>
+
+    <script src="assets/js/questions.js"></script>
+    <script src="assets/js/logic.js"></script>
+  </body>
+</html>
+
